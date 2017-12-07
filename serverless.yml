@@ -1,8 +1,12 @@
 service: serverless-ruby
+package:
+  exclude:
+    - packaging/**
 
 provider:
   name: aws
   runtime: nodejs4.3
+  versionFunctions: false # optional, default is true
 
 functions:
   hello:

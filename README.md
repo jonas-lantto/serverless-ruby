@@ -1,4 +1,4 @@
-# Serverless Ruby!
+# Serverless Ruby with gems!
 
 A Serverless Framework example using an AWS lambda which runs a Ruby function. Inspired by [serverless-php](https://github.com/ZeroSharp/serverless-php). 
 
@@ -15,13 +15,24 @@ This project demonstrates a few cool technlogies. Foremost is the amazing AWS La
 serverless install --url https://github.com/stewartlord/serverless-ruby
 ```
 
+## Ruby version
+To work with selected Traveling Ruby version it is necessary to setup ruby environment to version 2.2.2 
+1. `ruby --version`, should be at version 2.2.2
+2. `gem install bundler`
+3. `bundle install`, to get access to rake
+
+## Build package
+```
+rake package
+```
+
 ## Deploy Function
 ```
 $ serverless deploy
 Serverless: Packaging service...
 Serverless: Uploading CloudFormation file to S3...
 Serverless: Uploading artifacts...
-Serverless: Uploading service .zip file to S3 (7.21 MB)...
+Serverless: Uploading service .zip file to S3 (7.99 MB)...
 Serverless: Updating Stack...
 Serverless: Checking Stack update progress...
 ..............
@@ -42,10 +53,10 @@ functions:
 ```
 {
     "status": 200,
-    "body": "\"Hello from Ruby\""
+    "body": "\"Hello, Juliana Hickle, from Ruby\""
 }
 --------------------------------------------------------------------
-START RequestId: e9f2de65-31bc-11e7-a576-c18c442d05f7 Version: $LATEST
-END RequestId: e9f2de65-31bc-11e7-a576-c18c442d05f7
-REPORT RequestId: e9f2de65-31bc-11e7-a576-c18c442d05f7	Duration: 126.52 ms	Billed Duration: 200 ms 	Memory Size: 1024 MB	Max Memory Used: 23 MB
+START RequestId: 156196fd-db3b-11e7-aed9-2539a6d5691f Version: $LATEST
+END RequestId: 156196fd-db3b-11e7-aed9-2539a6d5691f
+REPORT RequestId: 156196fd-db3b-11e7-aed9-2539a6d5691f  Duration: 1852.04 ms    Billed Duration: 1900 ms        Memory Size: 1024 MB    Max Memory Used: 47 MB
 ```
